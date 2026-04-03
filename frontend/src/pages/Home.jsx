@@ -1,67 +1,66 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Sparkles, BarChart3, Zap, Shield } from 'lucide-react'
 
 export default function Home() {
   const features = [
     {
-      icon: <Sparkles className="w-8 h-8 text-blue-500" />,
+      emoji: '🤖',
       title: 'AI-Powered Generation',
-      description: 'Generate high-quality synthetic datasets using advanced AI models'
+      description: 'Advanced AI models create realistic synthetic datasets tailored to your needs'
     },
     {
-      icon: <BarChart3 className="w-8 h-8 text-blue-500" />,
+      emoji: '📊',
       title: 'Multiple Dataset Types',
-      description: 'Support for classification, regression, NLP, time series, and more'
+      description: '7 specialized types: Classification, Regression, NLP, Time Series, Recommendation, Anomaly, General'
     },
     {
-      icon: <Zap className="w-8 h-8 text-blue-500" />,
+      emoji: '⚡',
       title: 'Lightning Fast',
-      description: 'Generate thousands of rows in seconds with our optimized pipeline'
+      description: 'Generate thousands of rows in seconds with our optimized AI pipeline'
     },
     {
-      icon: <Shield className="w-8 h-8 text-blue-500" />,
+      emoji: '🔒',
       title: 'Data Privacy',
-      description: 'Your data is processed securely and never stored permanently'
+      description: 'Your data is processed securely and never stored after generation'
     }
   ]
 
   const steps = [
-    { number: '1', title: 'Configure', description: 'Set your dataset specifications' },
-    { number: '2', title: 'Generate', description: 'Let AI create your dataset' },
-    { number: '3', title: 'Download', description: 'Get your CSV file instantly' }
+    { number: '1️⃣', title: 'Configure', description: 'Set your dataset specifications and preferences' },
+    { number: '2️⃣', title: 'Generate', description: 'AI creates your realistic synthetic data' },
+    { number: '3️⃣', title: 'Download', description: 'Get CSV instantly and use anywhere' }
   ]
 
   return (
-    <div>
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-700 text-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16 animate-fadeIn">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Generate Datasets in Seconds
+              <h1 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6 leading-tight">
+                Generate Perfect Datasets
               </h1>
-              <p className="text-xl text-blue-100 mb-8">
-                Create realistic synthetic datasets for your machine learning projects with the power of AI. No more manual data collection.
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                Create production-ready synthetic datasets powered by advanced AI. Perfect for machine learning, testing, and research—in seconds, not weeks.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/generate"
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition inline-block text-center"
+                  className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold py-4 px-8 rounded-xl hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transform hover:scale-105 transition duration-300 text-center"
                 >
-                  Start Generating
+                  ✨ Start Generating
                 </Link>
                 <Link
                   to="/docs"
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800 transition inline-block text-center"
+                  className="border-2 border-blue-400 text-blue-300 font-bold py-4 px-8 rounded-xl hover:bg-blue-400/10 backdrop-blur-sm transition duration-300 text-center"
                 >
-                  Learn More
+                  📚 Learn More
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <svg viewBox="0 0 400 400" className="w-full h-auto">
+            <div className="hidden lg:block animate-slideInRight">
+              <svg viewBox="0 0 400 400" className="w-full h-auto drop-shadow-2xl">
                 {/* Background circle */}
                 <circle cx="200" cy="200" r="180" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" strokeWidth="2"/>
                 
@@ -124,15 +123,17 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">Why Choose DataHub?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-24 px-6 bg-gradient-to-b from-slate-900 via-blue-900/30 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-16 animate-fadeIn">
+            Why Choose DataHub?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:shadow-lg transition">
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">{feature.title}</h3>
-                <p className="text-slate-600">{feature.description}</p>
+              <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-blue-400/50 hover:bg-white/20 transition duration-300 transform hover:scale-105 animate-slideInUp">
+                <div className="text-4xl mb-4">{feature.emoji}</div>
+                <h3 className="text-xl font-bold text-blue-300 mb-3">{feature.title}</h3>
+                <p className="text-slate-300 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -140,17 +141,26 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-24 px-6 bg-gradient-to-b from-slate-900 via-slate-800 to-blue-900/20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-16 animate-fadeIn">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4">
-                  {step.number}
+              <div key={index} className="relative animate-slideInUp">
+                <div className="text-center">
+                  <div className="text-5xl mb-4 animate-float">{step.number}</div>
+                  <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <h3 className="text-2xl font-bold text-cyan-400 mb-3">{step.title}</h3>
+                    <p className="text-slate-300">{step.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">{step.title}</h3>
-                <p className="text-slate-600">{step.description}</p>
+                {index < 2 && (
+                  <div className="hidden md:block absolute right-0 top-1/2 transform translate-x-8 -translate-y-1/2">
+                    <div className="text-3xl text-cyan-400">→</div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -158,17 +168,19 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Generate Your First Dataset?</h2>
-          <p className="text-xl text-blue-100 mb-8">
+      <section className="py-20 px-6 bg-gradient-to-r from-blue-900/50 via-slate-900 to-cyan-900/50">
+        <div className="max-w-4xl mx-auto text-center animate-slideInUp">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            🚀 Ready to Generate Your First Dataset?
+          </h2>
+          <p className="text-xl text-slate-300 mb-8">
             Join thousands of data scientists and ML engineers using DataHub
           </p>
           <Link
             to="/generate"
-            className="bg-white text-blue-600 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition inline-block"
+            className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold py-4 px-10 rounded-xl hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transform hover:scale-105 transition duration-300 inline-block"
           >
-            Get Started Now
+            ✨ Get Started Now
           </Link>
         </div>
       </section>

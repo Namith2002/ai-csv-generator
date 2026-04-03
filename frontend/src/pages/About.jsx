@@ -1,100 +1,104 @@
 import React from 'react'
-import { Users, Target, Lightbulb, Zap } from 'lucide-react'
 
 export default function About() {
-  const team = [
+  const features = [
     {
+      emoji: '🤖',
       name: 'AI-Powered Technology',
-      description: 'Built with state-of-the-art generative AI models for realistic data generation'
+      description: 'Built with Google Gemini AI for realistic, diverse synthetic data generation'
     },
     {
+      emoji: '✨',
       name: 'User-Centric Design',
-      description: 'Intuitive interface designed for data scientists and researchers'
+      description: 'Intuitive, beautiful interface designed for data scientists and researchers'
     },
     {
+      emoji: '🚀',
       name: 'Production Ready',
-      description: 'Generate datasets suitable for real-world machine learning projects'
+      description: 'Generate enterprise-grade datasets suitable for real-world ML projects'
     },
     {
+      emoji: '⚡',
       name: 'Scalable Infrastructure',
-      description: 'Handle large-scale dataset generation with ease'
+      description: 'Handle large-scale dataset generation with lightning-fast performance'
     }
   ]
 
+  const benefits = [
+    { emoji: '🎯', title: 'Focus on Innovation', description: 'Dedicated to advancing AI-powered data generation' },
+    { emoji: '👥', title: 'Community Driven', description: 'Built by data scientists, for data scientists' },
+    { emoji: '🔥', title: 'Performance', description: 'Lightning-fast generation with highest quality data' },
+    { emoji: '🔒', title: 'Data Privacy', description: 'Secure processing with zero permanent storage' }
+  ]
+
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen py-16">
+    <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 min-h-screen py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* About Header */}
-        <div className="mb-16 text-center">
-          <h1 className="text-5xl font-bold text-slate-900 mb-6">About DataHub</h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+        <div className="mb-20 text-center animate-fadeIn">
+          <h1 className="text-6xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+            About DataHub
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             DataHub is revolutionizing how data scientists and ML engineers create high-quality synthetic datasets. 
             We combine cutting-edge AI with user-friendly design to make dataset generation fast, easy, and accessible to everyone.
           </p>
         </div>
 
         {/* Mission Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-center animate-slideInLeft">
           <div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Mission</h2>
-            <p className="text-lg text-slate-600 mb-4">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
+              Our Mission
+            </h2>
+            <p className="text-lg text-slate-300 mb-4 leading-relaxed">
               We believe that every data scientist should have access to high-quality synthetic datasets. 
               By leveraging advanced AI models, we're making it possible to generate realistic, diverse, 
               and production-ready datasets in minutes instead of weeks.
             </p>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-slate-300 leading-relaxed">
               Our platform eliminates the need for manual data collection, cleaning, and annotation, 
               allowing teams to focus on what matters most: building and training better models.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-12 border border-slate-200">
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <Target className="w-8 h-8 text-blue-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Focus on Innovation</h3>
-                  <p className="text-slate-600">We're dedicated to advancing AI-powered data generation</p>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-white/20 animate-slideInRight">
+            <div className="space-y-6">
+              {benefits.map((benefit, idx) => (
+                <div key={idx} className="flex gap-4 hover:translate-x-2 transition duration-300">
+                  <div className="text-3xl flex-shrink-0">{benefit.emoji}</div>
+                  <div>
+                    <h3 className="text-lg font-bold text-blue-300">{benefit.title}</h3>
+                    <p className="text-slate-400">{benefit.description}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-4">
-                <Lightbulb className="w-8 h-8 text-blue-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Community Driven</h3>
-                  <p className="text-slate-600">Built by data scientists, for data scientists</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Zap className="w-8 h-8 text-blue-500 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold text-slate-900">Performance</h3>
-                  <p className="text-slate-600">Lightning-fast generation with highest quality data</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Why Choose Us */}
-        <div className="mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Why Choose DataHub?</h2>
+        <div className="mb-20">
+          <h2 className="text-5xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-16 animate-fadeIn">
+            Why Choose DataHub?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((item, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-8 border border-slate-200 hover:shadow-lg transition">
-                <Users className="w-10 h-10 text-blue-500 mb-4" />
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">{item.name}</h3>
-                <p className="text-slate-600">{item.description}</p>
+            {features.map((item, index) => (
+              <div key={index} className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:border-blue-400/50 hover:bg-white/20 transition duration-300 transform hover:scale-105 animate-slideInUp">
+                <div className="text-4xl mb-4">{item.emoji}</div>
+                <h3 className="text-2xl font-bold text-blue-300 mb-2">{item.name}</h3>
+                <p className="text-slate-300 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Vision Section */}
-        <div className="bg-blue-600 text-white rounded-lg p-12 text-center">
-          <h2 className="text-4xl font-bold mb-6">Our Vision for the Future</h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+        <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-400/50 backdrop-blur-md rounded-2xl p-12 text-center animate-slideInUp">
+          <h2 className="text-5xl font-bold text-white mb-6">🌟 Our Vision for the Future</h2>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             We envision a world where synthetic data generation is as simple as clicking a button, 
             and where every organization can access the highest quality datasets for their machine learning endeavors. 
-            DataHub is just the beginning.
+            DataHub is just the beginning of the revolution.
           </p>
         </div>
       </div>
