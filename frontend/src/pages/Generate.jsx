@@ -31,7 +31,7 @@ export default function Generate() {
 
     setLoading(true)
     try {
-      const response = await fetch('/api/generate-dataset', {
+      const response = await fetch('https://ai-csv-generator.onrender.com/generate-dataset', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
